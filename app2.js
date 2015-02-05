@@ -6,17 +6,16 @@ var list = document.getElementById("list");
   
   for (i = 1; i <= 100; i++) {
     listItems += "<li>";
-  
+    var temp = '';
     if (i % 3 === 0) 
-      listItems += f;
+      temp = f;
     if (i % 5 === 0) 
-      listItems += b;
-
-    else {
-      listItems+=i;
-    }
+      temp = b;
     
-  listItems += "</li>";
+    listItems+=(temp || i);    
+    
+    listItems += "</li>";
   
-}
+  }
+  
 list.innerHTML +=listItems;
